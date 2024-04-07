@@ -12,8 +12,9 @@
         $scope.checked = false;
 
         $scope.checkLunch = function() {
-            if ($scope.dishes.trim().length === 0) {
+            if (!$scope.dishes || $scope.dishes.trim().length === 0) {
                 $scope.empty = true;
+                return;
             } else {
                 $scope.checked = true;
                 $scope.empty = false;
